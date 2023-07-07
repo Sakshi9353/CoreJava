@@ -7,28 +7,30 @@ public class Earphone{
 	String color;
 	int price;
 	String type;
-	int warenty;
+	String warenty;
 	String compatibleDevices;
 
 	static{
-		String headphoneJack="wireless";
-		String earPlacement="In ear";
-		String cableFeature="withot cable";
-		int itemWeight = 30;
-		String waterResistanceLevel = "Water Resistant";
+		 headphoneJack="wireless";
+		 earPlacement="In ear";
+		 cableFeature="withot cable";
+		 itemWeight = 30;
+		 waterResistanceLevel = "Water Resistant";
 	}
 
-	public Earphone(String color, int price, String type, int warenty, String compatibleDevices){
+	public Earphone(String color, int price, String type,String warenty, String compatibleDevices){
 		this.type = type;
 		this.color = color;
 		this.price = price;
 		this.warenty = warenty;
 		this.compatibleDevices = compatibleDevices;
+		
+		
 	}
 
 	public static void main(String[] args){
 
-		Earphone earphone = new Earphone("black", 1000, "noise", 1, "CellPhones");
+		Earphone earphone = new Earphone("black", 1000, "noise", "1 Year", "CellPhones");
 		System.out.println(earphone.headphoneJack);
 		System.out.println(earphone.earPlacement);
 		System.out.println(earphone.cableFeature);
@@ -41,7 +43,7 @@ public class Earphone{
 		System.out.println(earphone.compatibleDevices);
 		System.out.println("-----------");
 
-		Earphone earphone1 = new Earphone("blue", 2000, "samsang", 2, "Gaming consoles");
+		Earphone earphone1 = new Earphone("blue", 2000, "samsang", "2 Year", "Gaming consoles");
 		System.out.println(earphone1.headphoneJack);
 		System.out.println(earphone1.earPlacement);
 		System.out.println(earphone1.cableFeature);
@@ -54,7 +56,7 @@ public class Earphone{
 		System.out.println(earphone1.compatibleDevices);
 		System.out.println("-----------");
 
-		Earphone earphone2 = new Earphone("green", 3000, "bose", 3, "Tablets");
+		Earphone earphone2 = new Earphone("green", 3000, "bose", "3 Year", "Tablets");
 		System.out.println(earphone2.headphoneJack);
 		System.out.println(earphone2.earPlacement);
 		System.out.println(earphone2.cableFeature);
@@ -67,7 +69,7 @@ public class Earphone{
 		System.out.println(earphone2.compatibleDevices);
 		System.out.println("-----------");
 
-		Earphone earphone3 = new Earphone("Yellow", 4000, "boat", 4, "Laptops");
+		Earphone earphone3 = new Earphone("Yellow", 4000, "boat", "4 Year", "Laptops");
 		System.out.println(earphone3.headphoneJack);
 		System.out.println(earphone3.earPlacement);
 		System.out.println(earphone3.cableFeature);
@@ -80,7 +82,7 @@ public class Earphone{
 		System.out.println(earphone3.compatibleDevices);
 		System.out.println("-----------");
 
-		Earphone earphone4 = new Earphone("pink", 5000, "apple", 5, "Desktop");
+		Earphone earphone4 = new Earphone("pink", 5000, "apple", "5 Year", "Desktop");
 		System.out.println(earphone4.headphoneJack);
 		System.out.println(earphone4.earPlacement);
 		System.out.println(earphone4.cableFeature);

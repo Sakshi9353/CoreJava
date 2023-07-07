@@ -18,7 +18,7 @@ public class Computer{
 	String model;
 	String compatability;
 	String internetConnectivity;
-	int Weight 
+	int Weight; 
 	String ports;
 	
 	public static void main(String[] args)
