@@ -12,10 +12,17 @@ public class Earphone{
 
 	static{
 		 headphoneJack="wireless";
+<<<<<<< HEAD
 		 earPlacement="In ear";
 		 cableFeature="withot cable";
 		 itemWeight = 30;
 		 waterResistanceLevel = "Water Resistant";
+=======
+		earPlacement="In ear";
+		cableFeature="withot cable";
+		itemWeight = 30;
+		waterResistanceLevel = "Water Resistant";
+>>>>>>> d43b1336a43e2c558275d31a78c5df4131e058a0
 	}
 
 	public Earphone(String color, int price, String type,String warenty, String compatibleDevices){
