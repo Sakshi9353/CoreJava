@@ -11,11 +11,11 @@ public class Earphone{
 	String compatibleDevices;
 
 	static{
-		String headphoneJack="wireless";
-		String earPlacement="In ear";
-		String cableFeature="withot cable";
-		int itemWeight = 30;
-		String waterResistanceLevel = "Water Resistant";
+		 headphoneJack="wireless";
+		earPlacement="In ear";
+		cableFeature="withot cable";
+		itemWeight = 30;
+		waterResistanceLevel = "Water Resistant";
 	}
 
 	public Earphone(String color, int price, String type, int warenty, String compatibleDevices){
