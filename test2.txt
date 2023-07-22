@@ -1,0 +1,287 @@
+1.11 34
+2.Error->illigal start of expression
+3.Error->identifire expected
+4.Error ->cannot call using class name
+
+6.Method parameters
+	->Method parameters are variables that are defined within a method's parentheses and act as placeholders for values that can be passed to
+      the method when it is called. 
+	->They allow you to provide inputs to the method so that it can perform specific actions or computations using those values.
+	->Method parameters are part of a method's signature and are declared with a specific data type.
+	-> When calling a method, you must pass values of the appropriate data type that match the method's parameter types.
+Syntax:
+
+		returnType methodName(parameterType1 paramName1, parameterType2 paramName2,-----) {
+               }
+
+Example:
+public class Calculator {
+    public static int add(int a, int b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        int num1 = 5;
+        int num2 = 10;
+        int sum = add(num1, num2);
+
+        System.out.println("Sum: " + sum); 
+    }
+}
+
+
+
+7.Compile-time polymorphism
+	->Compile-time polymorphism, also known as static polymorphism, is a type of polymorphism that is resolved at compile time. 
+	->It involves using function overloading or template specialization to determine the appropriate function or method to be called 
+      based on the type of arguments or template parameters provided.
+
+		Function Overloading:
+			->Function overloading allows you to define multiple functions with the same name but different parameter lists. 
+			->The compiler decides which function to call based on the number or types of arguments passed during the function call.
+
+
+8.Var-args
+	->Variable Arguments (Var-args) in Java is a method that takes a variable number of arguments. 
+	->Variable Arguments in Java simplifies the creation of methods that need to take a variable number of arguments.
+  
+Example:
+ 
+class Test1 {
+    
+    static void fun(int... a)
+    {
+        System.out.println("Number of arguments: " + a.length);
+        for (int i : a)
+            System.out.print(i + " ");
+        System.out.println();
+    }
+    public static void main(String args[])
+    {
+       
+        fun(100)
+        fun(1, 2, 3, 4);
+          fun();
+    }
+	}
+
+9.Package
+	->A java package is a group of similar types of classes, interfaces and sub-packages.
+	->Package in java can be categorized in two form, built-in package and user-defined package.
+	->There are many built-in packages such as java, lang, awt, javax, swing, net, io, util, sql etc.
+
+There are two types of import Explicit & Implicit
+	Explicit import : Classes are available inside the package, Explicit means direct or when we give the proper path of the java class it will call as explicit import.
+		Example:
+		import java.util.ArrayList;
+		
+	Implicit import : Implicit means indirect, When we load all the classes of the package in our java code by using (*) it will call as implicit import.
+		Example:
+		import java.util.*;
+		
+10.Constructor chaining
+	->constructor chaining is a sequence of invoking constructors upon initializing an object.
+	->It is used when we want to invoke a number of constructors, one after another by using only an instance.
+	->A constructor is called from another constructor in the same class this process is known as constructor chaining.
+	->It occurs through inheritance.
+	->When we create an instance of a derived class, all the constructors of the inherited class (base class) are first invoked, after that the constructor of the calling class (derived class) is invoked.
+Exaple:
+	class Demo  
+	{   
+	Demo()  
+	{  
+	this(80, 90);  
+	System.out.println("Base class default constructor called");  
+	}  
+	Demo(int x, int y)  
+	{  
+	System.out.println("Base class parameterized constructor called");  
+	}  
+	}  
+	class Prototype extends Demo  
+	{  
+	Prototype()  
+	{  
+	this("Java", "Python");  
+	System.out.println("Derived class default constructor called");  
+	}  
+	Prototype(String str1, String str2)  
+	{  
+	super();  
+	System.out.println("Derived class parameterized constructor called");  
+	}  
+	}  
+	public class ConstructorChaining  
+	{   
+	public static void main(String args[])   
+	{     
+	Prototype my_example = new Prototype();  
+	}   
+	}  
+
+11.public class Fibonacci {
+
+    public static int fibonacci(int n) {
+        if (n <= 0) {
+            return 0;
+        } else if (n == 1) {
+            return 1;
+        } else {
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+    }
+
+    public static void main(String[] args) {
+        int n = 10; 
+        System.out.println("Fibonacci Sequence:");
+
+        for (int i = 0; i < n; i++) {
+            System.out.print(fibonacci(i) + " ");
+        }
+    }
+}
+		
+		
+		
+12.
+	->To check if a list of integers contains only odd numbers in Java, you can iterate through the list and verify each element to see 
+      if it is an odd number. 
+
+public class OddNumberChecker {
+
+    public static boolean containsOnlyOddNumbers(List<Integer> numbers) {
+        for (Integer num : numbers) {
+            if (num % 2 == 0) { 
+                return false;
+            }
+        }
+        return true; 
+    }
+
+    public static void main(String[] args) {
+        List<Integer> numbers = List.of(1, 3, 5, 7, 9);
+        boolean containsOnlyOdd = containsOnlyOddNumbers(numbers);
+        System.out.println("Contains only odd numbers: " + containsOnlyOdd);
+    }
+}
+
+	-> The method containsOnlyOddNumbers takes a List<Integer> as input and returns true if all elements in the list are odd numbers. 
+	-> If it encounters an even number, the method immediately returns false. 
+	-> Otherwise, it returns true if it successfully checks all the elements in the list and finds them to be odd numbers.
+
+13.
+public class ArrayEqualityChecker {
+
+    public static void main(String[] args) {
+        int[] array1 = {1, 2, 3, 4, 5};
+        int[] array2 = {3, 5, 2, 1, 4};
+
+        boolean areEqual = areArraysEqual(array1, array2);
+        System.out.println("The two arrays are equal: " + areEqual);
+    }
+
+    public static boolean areArraysEqual(int[] arr1, int[] arr2) {
+        if (arr1.length != arr2.length) {
+            return false;
+        }
+
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+
+        for (int i = 0; i < arr1.length; i++) {
+            if (arr1[i] != arr2[i]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+
+14.Enumerations
+	->An enumeration (enum) is a special data type used to define a collection of constants with a meaningful name. 
+	-> It provides a way to represent a fixed set of predefined values that are related to each other. 
+	-> Enumerations are commonly used to represent a group of related constants in a more readable and maintainable manner.
+		enum Season {
+			SPRING,
+			SUMMER,
+			AUTUMN,
+			WINTER
+		}
+    ->Enumerations can have methods, constructors, and fields just like regular classes.
+    ->Each constant can have its own implementation for the methods declared in the enum.
+   
+   Example:
+   enum Coin {
+    PENNY(1),
+    NICKEL(5),
+    DIME(10),
+    QUARTER(25);
+
+    private final int valueInCents;
+
+    Coin(int valueInCents) {
+        this.valueInCents = valueInCents;
+    }
+
+    public int getValueInCents() {
+        return valueInCents;
+    }
+}
+
+Enumerations provide several benefits:
+
+Readability: 
+	->By using meaningful names for constants, code becomes more self-explanatory and easier to understand.
+
+Type Safety:
+	-> Enumerations are strongly typed, which means you can only assign values of the same enum type to variables of that type.
+
+Compile-time Checking:
+	->Since enum constants are known at compile time, the compiler can catch errors if you try to use an invalid constant.
+
+Singleton Pattern:
+	-> Enumerations can be used to implement the Singleton pattern, ensuring that only one instance of the enum exists.
+
+Switch-Case: 
+	->Enumerations are often used in switch-case statements to handle different cases more efficiently.
+
+15.When you create an object in Java,JVM goes through a series of steps to allocate memory and initializethe object.
+
+What happens inside the JVM when you create an object:
+
+Class Loading: 
+	->Before creating an object, the JVM needs to ensure that the class containing the object's blueprint is loaded into memory. 
+	->If the class is not already loaded, the JVM searches for the appropriate class file and loads it.
+
+Memory Allocation: 
+	->Once the class is loaded, the JVM determines the size of the object and allocates memory for it on the heap. 
+	->The heap is a region of memory dedicated to storing objects created during the program's execution.
+
+Object Initialization: 
+	->After memory allocation, the JVM initializes the object. 
+	->This involves setting default values for instance variables (if any), and executing any initializers or constructor code defined in
+      the class. 
+
+Reference Handling: 
+	->When you create an object, you usually store a reference to it in a variable. 
+	->The JVM handles this reference by storing it in the appropriate stack frame or register, depending on the context.
+
+Garbage Collection:
+	->The JVM has a garbage collector responsible for reclaiming memory occupied by objects that are no longer reachable or in use. 
+	->This process periodically identifies and cleans up these objects, freeing up memory for future object allocations.
+
+Object Usage:
+	->Once the object is created and initialized, your Java program can use it by invoking its methods or accessing its fields through the reference variable.
+
+16.Members of class
+		->Fields
+		->Constructor
+		->Methods
+		->Static Method
+		->Inner class
+		->static block
+
+
+
+
